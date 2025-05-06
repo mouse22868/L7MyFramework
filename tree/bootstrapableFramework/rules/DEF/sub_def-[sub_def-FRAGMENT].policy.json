@@ -1,0 +1,59 @@
+{
+  "goid": "012ce653ed64a2f429d3907b248a6a47",
+  "guid": "a88d82dd-e024-4c22-a6db-a8fc91e8b105",
+  "name": "sub_def",
+  "policyType": "FRAGMENT",
+  "checksum": "7a0ed6d581c497e08cfd6b4c05e492de4348b551",
+  "folderPath": "/bootstrapableFramework/rules/DEF",
+  "soap": false,
+  "policy": {
+    "code": {
+      "All": [
+        {
+          "HttpRouting": {
+            "keyAlias": "blah",
+            "nonDefaultKeystoreId": "00000000000000000000000000000002",
+            "protectedServiceUrl": "https://blah",
+            "requestHeaderRules": {
+              ".type": "httpPassthroughRuleSet",
+              "forwardAll": true,
+              "rules": [
+                {
+                  ".type": "httpPassthroughRule",
+                  "name": "Cookie"
+                },
+                {
+                  ".type": "httpPassthroughRule",
+                  "name": "SOAPAction"
+                }
+              ]
+            },
+            "requestParamRules": {
+              ".type": "httpPassthroughRuleSet",
+              "forwardAll": true,
+              "rules": []
+            },
+            "responseHeaderRules": {
+              ".type": "httpPassthroughRuleSet",
+              "forwardAll": true,
+              "rules": [
+                {
+                  ".type": "httpPassthroughRule",
+                  "name": "Set-Cookie"
+                }
+              ]
+            },
+            "samlAssertionVersion": 2,
+            "tlsTrustedCertGoids": [
+              "84449671abe2a5b143051dbdfdf7e704"
+            ],
+            "tlsTrustedCertNames": [
+              "www.broadcom.com"
+            ],
+            "usesDefaultKeyStore": false
+          }
+        }
+      ]
+    }
+  }
+}

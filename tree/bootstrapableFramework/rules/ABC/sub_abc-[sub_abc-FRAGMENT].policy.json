@@ -1,0 +1,80 @@
+{
+  "goid": "012ce653ed64a2f429d3907b248a6a2c",
+  "guid": "3b1c8451-6af9-4983-ae6b-1f7e795ab571",
+  "name": "sub_abc",
+  "policyType": "FRAGMENT",
+  "checksum": "6f0ba17c7efb9ffc8968f069f60f143ad9c44046",
+  "folderPath": "/bootstrapableFramework/rules/ABC",
+  "soap": false,
+  "policy": {
+    "code": {
+      "All": [
+        {
+          "HttpRouting": {
+            "keyAlias": "blah",
+            "nonDefaultKeystoreId": "00000000000000000000000000000002",
+            "protectedServiceUrl": "https://blah",
+            "requestHeaderRules": {
+              ".type": "httpPassthroughRuleSet",
+              "forwardAll": true,
+              "rules": [
+                {
+                  ".type": "httpPassthroughRule",
+                  "name": "Cookie"
+                },
+                {
+                  ".type": "httpPassthroughRule",
+                  "name": "SOAPAction"
+                }
+              ]
+            },
+            "requestParamRules": {
+              ".type": "httpPassthroughRuleSet",
+              "forwardAll": true,
+              "rules": []
+            },
+            "responseHeaderRules": {
+              ".type": "httpPassthroughRuleSet",
+              "forwardAll": true,
+              "rules": [
+                {
+                  ".type": "httpPassthroughRule",
+                  "name": "Set-Cookie"
+                }
+              ]
+            },
+            "samlAssertionVersion": 2,
+            "tlsTrustedCertGoids": [
+              "84449671abe2a5b143051dbdfdf7e704"
+            ],
+            "tlsTrustedCertNames": [
+              "www.broadcom.com"
+            ],
+            "usesDefaultKeyStore": false
+          }
+        },
+        {
+          "JdbcQuery": {
+            "connectionName": "mydb",
+            "convertVariablesToStrings": false,
+            "sqlQuery": "select amazing from awesome;"
+          }
+        },
+        {
+          "JmsRouting": {
+            "endpointName": "eventsOut",
+            "endpointOid": "84449671abe2a5b143051dbdfdf81d57",
+            "requestJmsMessagePropertyRuleSet": {
+              ".type": "jmsMessagePropertyRuleSet",
+              "rules": []
+            },
+            "responseJmsMessagePropertyRuleSet": {
+              ".type": "jmsMessagePropertyRuleSet",
+              "rules": []
+            }
+          }
+        }
+      ]
+    }
+  }
+}

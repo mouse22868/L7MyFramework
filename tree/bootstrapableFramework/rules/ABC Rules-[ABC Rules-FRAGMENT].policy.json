@@ -1,0 +1,46 @@
+{
+  "goid": "84449671abe2a5b143051dbdfdf7e6db",
+  "guid": "e513b52b-7d41-416f-9906-17f8e12b6d6a",
+  "name": "ABC Rules",
+  "policyType": "FRAGMENT",
+  "checksum": "0dced1af2ece9d0c7f9261bf026c26e4ae7f12c1",
+  "folderPath": "/bootstrapableFramework/rules",
+  "soap": false,
+  "policy": {
+    "code": {
+      "All": [
+        {
+          "SetVariable": {
+            "expression": "${gateway.a}",
+            "variable": "a"
+          }
+        },
+        {
+          "OneOrMore": [
+            {
+              "True": {}
+            },
+            {
+              "Include": {
+                "policyGuid": "3b1c8451-6af9-4983-ae6b-1f7e795ab571",
+                "policyName": "sub_abc"
+              }
+            },
+            {
+              "Include": {
+                "policyGuid": "a88d82dd-e024-4c22-a6db-a8fc91e8b105",
+                "policyName": "sub_def"
+              }
+            },
+            {
+              "Include": {
+                "policyGuid": "e15a5669-0bf8-4873-97e4-d21464a7fe42",
+                "policyName": "sub_ghi"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
